@@ -28,3 +28,12 @@ Note: This is the demo version which is still under development and improvement.
 * [Mac-Spoofing-Attack](https://www.jigsawacademy.com/blogs/cyber-security/mac-spoofing-attack/)
 * [Generate Random MAC Addresses](https://www.browserling.com/tools/random-mac)
 
+## Preview
+<img src="https://raw.githubusercontent.com/batukapicioglu/Mac-and-IP-Changer--GUI/main/İmage/1.PNG">
+
+<img src="https://raw.githubusercontent.com/batukapicioglu/Mac-and-IP-Changer--GUI/main/İmage/2.PNG">
+
+<img src="https://raw.githubusercontent.com/batukapicioglu/Mac-and-IP-Changer--GUI/main/İmage/3.PNG">
+
+## Notes
+This is the demo version which is still under development and improvement.
