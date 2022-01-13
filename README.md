@@ -10,3 +10,21 @@ With this program, it allows you to change your IP( Internet Protocol ) address 
 Note: This is the demo version which is still under development and improvement.
 
 @Batu Kapicioglu
+
+## Installation
+
+```
+   git clone https://github.com/batukapicioglu/Mac-and-IP-Changer--GUI.git
+   sudo apt-get update
+   sudo apt-get install python3
+   sudo apt-get install python3-tk
+   cd Mac-and-IP-Changer--GUI/
+   cd Networksc 
+   sudo chmod +x VenomAge.py
+   sudo python3 VenomAge.py 
+   
+```
+## Links
+* [Mac-Spoofing-Attack](https://www.jigsawacademy.com/blogs/cyber-security/mac-spoofing-attack/)
+* [Generate Random MAC Addresses](https://www.browserling.com/tools/random-mac)
+
