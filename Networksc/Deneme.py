@@ -1,6 +1,8 @@
 import tkinter as tk
 import subprocess
 import random
+import sys
+import os
 
 
 from tkinter import messagebox
@@ -70,11 +72,20 @@ def mac_veri():
         subprocess.call(['ifconfig', intere, 'hw','ether',mac])
         subprocess.call(['ifconfig', intere, 'up'])
 
-        if entry_inter.get() :
+        if entry_inter.get()=="eth0" :
             msg=messagebox.showinfo("WARNING",message="Successful")
-        elif entry_inter.get() :
+        elif entry_inter.get()=="eth1" :
+            msg=messagebox.showinfo("WARNING",message="Successful")
+        elif entry_inter.get()=="eth2" :
+            msg=messagebox.showinfo("WARNING",message="Successful")
+        elif entry_inter.get()=="tun0" :
+            msg=messagebox.showinfo("WARNING",message="Successful")
+        elif entry_inter.get() == "wlan0":
+            msg = messagebox.showinfo("WARNING", message="Successful")
+        elif entry_inter.get() == "wlan1":
             msg=messagebox.showinfo("WARNING",message="Successful")
         else :
+            msg1 = messagebox.showinfo("ERROR", message="Please Change Interface")
             msg2 = messagebox.showinfo("WARNING", message="Example : eth_ , tun_ , wlan_")
 
 
@@ -94,9 +105,15 @@ def mac_veri():
         subprocess.call(['ifconfig', intere1, 'hw','ether',b])
         subprocess.call(['ifconfig', intere1, 'up'])
 
-        if entry_inter_rndom.get() :
+        if entry_inter_rndom.get()=="eth0" :
             msg=messagebox.showinfo("WARNING",message="Successful")
-        elif entry_inter_rndom.get():
+        elif entry_inter_rndom.get()=="eth1" :
+            msg=messagebox.showinfo("WARNING",message="Successful")
+        elif entry_inter_rndom.get()=="eth2" :
+            msg = messagebox.showinfo("WARNING", message="Successful")
+        elif entry_inter_rndom.get() == "wlan0":
+            msg = messagebox.showinfo("WARNING", message="Successful")
+        elif entry_inter_rndom.get() == "wlan0":
             msg=messagebox.showinfo("WARNING",message="Successful")
         else :
             msg1 = messagebox.showinfo("ERROR", message="Please Change Interface")
@@ -113,12 +130,47 @@ def mac_veri():
 def ipveri():
 
          form.destroy()
+         var = messagebox.showinfo("Warning ", "First you can chach Interface")
+         root = tk.Tk()
          form3 = tk.Tk()
          form3.title("VenomAge")
          form3.geometry("600x400")
          form3.resizable(True, True)
 
-         var = messagebox.showinfo("Warning ", "IP Changer Starting")
+
+
+         # --- functions ---
+
+         def test():
+             print("ifconfig")
+             p = subprocess.call("ifconfig", shell=True, stdout=subprocess.PIPE)
+             print(p.stdout.decode())
+
+         # --- classes ---
+
+         class Redirect():
+
+             def __init__(self, widget):
+                 self.widget = widget
+
+             def write(self, text):
+                 self.widget.insert('end', text)
+                 # self.widget.see('end') # autoscroll
+
+                 # def flush(self):
+                 pass
+
+         # --- main ---
+
+         text = tk.Text(root)
+         text.pack()
+
+         var = messagebox.showinfo("Warning ", "IP Changer Starting", command=test)
+
+         old_stdout = sys.stdout
+         sys.stdout = Redirect(text)
+
+
 
          label1 = tk.Label(form3, font='italic 17 bold', text="IP Changer")
          label1.pack()
